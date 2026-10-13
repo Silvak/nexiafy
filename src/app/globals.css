@@ -64,6 +64,17 @@
   --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
+
+  /* Header brand palette */
+  --brand-green-1: oklch(0.88 0.17 149);
+  --brand-rose-1: var(--primary);
+  --gray-1: oklch(0.9821 0.0046 236.56);
+  --gray-4: oklch(0.6816 0.0239 263.3);
+  --gray-6: oklch(0.8386 0.0151 253.68);
+  --gray-5: oklch(0.76 0.019 258.49);
+  --gray-9: oklch(0.3016 0.0219 258.75);
+  --gray-10: oklch(0.3789 0.0289 259.35);
+  --gray-14: oklch(0.1342 0.0105 248.03);
 }
 
 @theme inline {
@@ -100,6 +111,19 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
+  /* Header brand palette */
+  --color-brand-green-1: var(--brand-green-1);
+  --color-brand-rose-1: var(--brand-rose-1);
+  --color-gray-1: var(--gray-1);
+  --color-gray-4: var(--gray-4);
+  --color-gray-5: var(--gray-5);
+  --color-gray-6: var(--gray-6);
+  --color-gray-9: var(--gray-9);
+  --color-gray-10: var(--gray-10);
+  --color-gray-14: var(--gray-14);
+
+  --animate-marquee: marquee 40s linear infinite;
+
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
@@ -135,4 +159,19 @@ body {
 ::selection {
   background-color: transparent;
   color: var(--primary);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
 }

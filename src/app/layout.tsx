@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientWrapper from "@/components/ClientWrapper";
+import Navbar from "@/components/Navbar";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -33,7 +34,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         />
       </head>
       <body className="min-h-full flex flex-col font-sans">
-        <ClientWrapper>{children}</ClientWrapper>
+        <ClientWrapper>
+          <Navbar />
+          <div className="flex flex-1 flex-col pt-[104px] md:pt-[116px] lg:pt-[104px]">
+            {children}
+          </div>
+        </ClientWrapper>
       </body>
     </html>
   );
