@@ -150,6 +150,37 @@ export interface NewsItem {
   href: string;
 }
 
+export interface CompactifaiMetric {
+  prefix: string;
+  value: string;
+  label: string;
+}
+
+export interface CompactifaiContent {
+  badgeLabel: string;
+  title: string;
+  description: string;
+  metrics: CompactifaiMetric[];
+  cta: { id: string; label: string; href: string };
+}
+
+export const compactifai: CompactifaiContent = {
+  badgeLabel: "Model Compression",
+  title: "Deploy Compressed AI Models Anywhere",
+  description:
+    "Our advanced compression technology reduces LLM size, enabling faster, scalable and cost effective AI on any enterprise system or edge device.",
+  metrics: [
+    { prefix: "", value: "50-80%", label: "Lower Inference Costs" },
+    { prefix: "Up to", value: "2x", label: "Faster Inference" },
+    { prefix: "Close to", value: "100%", label: "Accuracy Retention" },
+  ],
+  cta: {
+    id: "home-compression-section-cta",
+    label: "Explore compression",
+    href: "/ai-suite",
+  },
+};
+
 export const news: NewsItem[] = [
   {
     title: "Nexiafy launches Insights analytics layer",

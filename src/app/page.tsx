@@ -1,3 +1,4 @@
+import CompactifaiSection from "@/components/landing/CompactifaiSection";
 import FeaturesSection from "@/components/landing/FeaturesSection";
 import HeroSection from "@/components/landing/HeroSection";
 import NewsSection from "@/components/landing/NewsSection";
@@ -11,6 +12,7 @@ export default function Home() {
       <HeroSection />
       <TrustedBySection />
       <SolutionsSection />
+      <CompactifaiSection />
       <StatsSection />
       <FeaturesSection />
       <NewsSection />
