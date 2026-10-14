@@ -68,6 +68,9 @@
   /* Brand and gray palette, copied verbatim from the reference. */
   --brand-green-1: #00cc66;
   --brand-rose-1: #f01438;
+  --brand-sea-1: #2ee6d6;
+  --brand-yellow-1: #ffd000;
+  --brand-orange-1: #ff6a00;
   --gray-1: #f8fafc;
   --gray-2: #f3f5f7;
   --gray-3: #edf0f3;
@@ -123,6 +126,9 @@
   /* Header brand palette */
   --color-brand-green-1: var(--brand-green-1);
   --color-brand-rose-1: var(--brand-rose-1);
+  --color-brand-sea-1: var(--brand-sea-1);
+  --color-brand-yellow-1: var(--brand-yellow-1);
+  --color-brand-orange-1: var(--brand-orange-1);
   --color-gray-1: var(--gray-1);
   --color-gray-2: var(--gray-2);
   --color-gray-3: var(--gray-3);
@@ -186,6 +192,18 @@
  */
 @utility grid-cols-content {
   grid-template-columns: minmax(0, 1024px);
+}
+
+@utility text-brand-sea-1 {
+  color: var(--brand-sea-1);
+}
+
+@utility text-brand-yellow-1 {
+  color: var(--brand-yellow-1);
+}
+
+@utility text-brand-orange-1 {
+  color: var(--brand-orange-1);
 }
 
 @layer base {

@@ -51,20 +51,59 @@ export const trustedByLogo: TrustedByLogo = {
 };
 
 export interface SolutionItem {
+  id: string;
+  eyebrow: string;
+  accentClass:
+    | "text-brand-sea-1"
+    | "text-brand-yellow-1"
+    | "text-brand-green-1"
+    | "text-brand-orange-1";
   title: string;
   description: string;
+  href: string;
+  image: string;
 }
 
 export const solutions: SolutionItem[] = [
   {
-    title: "AI Automation",
+    id: "home-solutions-for-digital-natives",
+    eyebrow: "For digital natives",
+    accentClass: "text-brand-sea-1",
+    title: "Scale Without Limits",
     description:
-      "Streamline repetitive workflows with agents that learn from your processes and act on your data.",
+      "Deploy compact models that eliminate GPU shortages, reduce latency, and accelerate growth.",
+    href: "/solutions/digital-natives",
+    image: "/images/card-code.png",
   },
   {
-    title: "Predictive Analytics",
+    id: "home-solutions-for-corporations",
+    eyebrow: "For corporations",
+    accentClass: "text-brand-yellow-1",
+    title: "Extend Your Infrastructure",
     description:
-      "Turn historical data into forward-looking insight so your team can act before trends happen.",
+      "Run advanced AI on existing hardware with compressed models that cut CAPEX and energy use.",
+    href: "/solutions/corporates",
+    image: "/images/card-infra.png",
+  },
+  {
+    id: "home-solutions-for-data-centers",
+    eyebrow: "For data centers",
+    accentClass: "text-brand-green-1",
+    title: "Maximize Capacity",
+    description:
+      "Increase throughput and profitability without adding racks—thanks to smaller, faster models.",
+    href: "/solutions/data-centers",
+    image: "/images/card-capacity.png",
+  },
+  {
+    id: "home-solutions-for-device-manufacturers",
+    eyebrow: "For device manufacturers",
+    accentClass: "text-brand-orange-1",
+    title: "Powerful AI on Any Device",
+    description:
+      "Enable on-device inference with compressed models that fit limited compute and memory.",
+    href: "/solutions/device-manufacturers",
+    image: "/images/card-AI.png",
   },
 ];
 
