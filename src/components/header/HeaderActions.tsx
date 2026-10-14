@@ -3,7 +3,7 @@ import Link from "next/link";
 import { headerActions } from "@/config/navigation";
 
 const variantClasses: Record<"secondary" | "primary", string> = {
-  secondary: "bg-gray-10 text-gray-1 hover:bg-gray-9",
+  secondary: "bg-button-secondary text-gray-1 hover:bg-gray-9",
   primary: "bg-brand-rose-1 text-white hover:bg-brand-rose-1/90",
 };
 

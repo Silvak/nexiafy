@@ -1,8 +1,13 @@
+"use client";
+
+import { useReducedMotion } from "motion/react";
+import Marquee from "react-fast-marquee";
+
 import { announcements } from "@/config/navigation";
 
 /**
- * Announcement list rendered once; AnnouncementMarquee duplicates it to
- * create a seamless loop.
+ * Announcement list rendered once; react-fast-marquee clones it to fill the
+ * track and create a seamless loop.
  */
 function AnnouncementItems() {
   return (
@@ -39,18 +44,13 @@ function AnnouncementItems() {
  * Pauses on hover and respects prefers-reduced-motion.
  */
 export default function AnnouncementMarquee() {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <div className="w-full overflow-hidden bg-brand-green-1">
-      <div className="flex min-h-[40px] items-center md:min-h-[36px]">
-        <div className="flex w-max animate-marquee items-center hover:[animation-play-state:paused] motion-reduce:animate-none">
-          <div className="flex shrink-0 items-center">
-            <AnnouncementItems />
-          </div>
-          <div className="flex shrink-0 items-center" aria-hidden="true" inert>
-            <AnnouncementItems />
-          </div>
-        </div>
-      </div>
+    <div className="flex min-h-[40px] w-full items-center overflow-hidden bg-brand-green-1 md:min-h-[36px]">
+      <Marquee speed={40} pauseOnHover autoFill play={!reduceMotion}>
+        <AnnouncementItems />
+      </Marquee>
     </div>
   );
 }
