@@ -143,11 +143,40 @@ export const features: FeatureItem[] = [
   },
 ];
 
+export type AiModelIcon = "server" | "cloud-cog";
+
+export interface AiModelItem {
+  title: string;
+  description: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+  icon: AiModelIcon;
+  desktopCtaId: string;
+  mobileCtaId: string;
+}
+
+export interface AiModelsContent {
+  title: string;
+  readMoreLabel: string;
+  items: AiModelItem[];
+}
+
 export interface NewsItem {
+  id: string;
   title: string;
   excerpt: string;
   date: string;
   href: string;
+  image: string;
+  imageAlt: string;
+}
+
+export interface NewsContent {
+  title: string;
+  subtitle: string;
+  cta: { id: string; label: string; href: string };
+  items: NewsItem[];
 }
 
 export interface CompactifaiMetric {
@@ -181,26 +210,174 @@ export const compactifai: CompactifaiContent = {
   },
 };
 
-export const news: NewsItem[] = [
-  {
-    title: "Nexiafy launches Insights analytics layer",
-    excerpt:
-      "A new AI-powered analytics layer for product teams is now available.",
-    date: "2026-09-02",
-    href: "/resources/blog/nexiafy-insights",
+export interface FoundryContent {
+  image: string;
+  imageAlt: string;
+  badge: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  descriptionEmphasis: string;
+  cta: { id: string; label: string; href: string };
+}
+
+export const foundry: FoundryContent = {
+  image: "/images/card-infra.png",
+  imageAlt: "Nexiafy Foundry",
+  badge: "Coming Soon",
+  eyebrow: "Sovereign AI",
+  title: "Nexiafy Foundry",
+  description:
+    "A unified platform for sovereign AI infrastructure: explore models, deploy GPU clusters, monitor costs and workloads, and access serverless AI services—",
+  descriptionEmphasis: "all within a clean, intuitive control panel.",
+  cta: {
+    id: "home-foundry-section-cta",
+    label: "Learn more",
+    href: "/foundry",
   },
-  {
-    title: "Partnering with leading data platforms",
-    excerpt:
-      "Nexiafy now integrates natively with the data platforms teams already use.",
-    date: "2026-08-14",
-    href: "/resources/blog/data-platform-partnership",
+};
+
+export interface RealResultQuotePart {
+  text: string;
+  emphasis?: boolean;
+}
+
+export interface RealResultItem {
+  id: string;
+  quote: RealResultQuotePart[];
+  href: string;
+}
+
+export interface RealResultsContent {
+  title: string;
+  subtitle: string;
+  readMoreLabel: string;
+  logo: TrustedByLogo;
+  items: RealResultItem[];
+}
+
+export const realResults: RealResultsContent = {
+  title: "Real Results",
+  subtitle: "Our Compressed AI Models have been validated by Global Leaders",
+  readMoreLabel: "Read More",
+  logo: trustedByLogo,
+  items: [
+    {
+      id: "home-real-results-0",
+      href: "https://hpmegatrends.com/why-we-invested-in-multiverse-computing-8760cef32091",
+      quote: [
+        {
+          text: "We conducted extensive technical benchmarking and were very impressed with the results: decrease in time to first token, increase in token throughput, and models that are cheaper to run (",
+        },
+        { text: "50–80% cost and energy savings", emphasis: true },
+        { text: ")" },
+      ],
+    },
+    {
+      id: "home-real-results-1",
+      href: "https://multiversecomputing.com/resources/telefonica-and-multiverse-computing-develop-an-ai-based-model-to-support-customer-service-agents",
+      quote: [
+        {
+          text: "The compressed models developed can be deployed directly on Telefónica’s network, including local facilities, making it possible to ",
+        },
+        {
+          text: "reduce energy consumption by up to 75%",
+          emphasis: true,
+        },
+        { text: " compared to uncompressed models." },
+      ],
+    },
+    {
+      id: "home-real-results-2",
+      href: "https://multiversecomputing.com/resources/multiverse-computing-launches-compactifai-api-on-aws",
+      quote: [
+        {
+          text: "Integrating CompactifAI’s compressed models into our customer support chatbot has been a game changer. We have ",
+        },
+        { text: "reduced our model footprint by over 50%", emphasis: true },
+        {
+          text: " while maintaining high response quality with lower latency and cost.",
+        },
+      ],
+    },
+    {
+      id: "home-real-results-3",
+      href: "https://arxiv.org/pdf/2507.08836",
+      quote: [
+        { text: "The research confirms that the model compressed via " },
+        {
+          text: "CompactifAI provide substantial reductions",
+          emphasis: true,
+        },
+        {
+          text: " in power consumption, operational costs, and carbon emissions while maintaining competitive accuracy.",
+        },
+      ],
+    },
+  ],
+};
+
+export const aiModels: AiModelsContent = {
+  title: "Explore our AI Models",
+  readMoreLabel: "Read more",
+  items: [
+    {
+      title: "Private Deployment",
+      description:
+        "Run compressed models in your own cloud, on-premise, or on edge devices—maximizing security and minimizing computational costs.",
+      href: "/compactifai/deployment",
+      image: "/images/image1.png",
+      imageAlt: "Private Deployment image",
+      icon: "server",
+      desktopCtaId: "solutions-product-private-deployment-cta-desktop",
+      mobileCtaId: "solutions-product-private-deployment-cta-mobile",
+    },
+    {
+      title: "AI Inference",
+      description:
+        "Integrate compact models via a simple API. Achieve top performance with lower latency and reduced GPU footprint.",
+      href: "/compactifai/api",
+      image: "/images/image3.png",
+      imageAlt: "AI Inference image",
+      icon: "cloud-cog",
+      desktopCtaId: "solutions-product-ai-inference-cta-desktop",
+      mobileCtaId: "solutions-product-ai-inference-cta-mobile",
+    },
+  ],
+};
+
+export const news: NewsContent = {
+  title: "News",
+  subtitle: "All the latest news, straight from us.",
+  cta: {
+    id: "home-news-show-all",
+    label: "Show me all",
+    href: "/resources",
   },
-  {
-    title: "Introducing Nexiafy Shield",
-    excerpt:
-      "A security and governance layer purpose-built for enterprise AI deployments.",
-    date: "2026-07-21",
-    href: "/resources/blog/nexiafy-shield",
-  },
-];
+  items: [
+    {
+      id: "home-news-article-9d107bb4-58dc-4006-a8c7-e16dae13707d",
+      title:
+        "Multiverse Computing and Muxunav join forces to develop and launch a new family of AI models for regulated financial services and unattended commerce",
+      excerpt:
+        "A partnership to develop specialised AI models for identity verification (KYC), fraud prevention and voice assistance, with an initial deployment in Muxunav’s unattended payment devices and subsequent applications in regulated financial services.",
+      date: "October 1st, 2026",
+      href: "/resources/multiverse-computing-and-muxunav-join-forces-to-develop-and-launch-a-new-family-of-ai-models-for",
+      image: "/images/image2.png",
+      imageAlt:
+        "Multiverse Computing and Muxunav join forces to develop and launch a new family of AI models for regulated financial services and unattended commerce thumbnail",
+    },
+    {
+      id: "home-news-article-e846d25a-e12c-40b8-b8b2-17e70a3a0828",
+      title:
+        "Sports Data Campus and Multiverse Computing join forces to bring advanced artificial intelligence to the global football ecosystem",
+      excerpt:
+        "The collaboration combines Sports Data Campus’s educational expertise with the technology of one of Europe’s leading companies in efficient AI, quantum software and applied optimisation, with the aim of opening up new opportunities for clubs, leagues, fed...",
+      date: "September 30th, 2026",
+      href: "/resources/sports-data-campus-and-multiverse-computing-join-forces-to-bring-advanced-artificial",
+      image: "/images/image1.png",
+      imageAlt:
+        "Sports Data Campus and Multiverse Computing join forces to bring advanced artificial intelligence to the global football ecosystem thumbnail",
+    },
+  ],
+};
