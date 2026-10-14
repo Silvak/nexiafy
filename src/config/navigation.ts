@@ -108,6 +108,11 @@ export const navItems: NavItem[] = [
     label: "Resources",
     links: [
       {
+        label: "News",
+        description: "All the latest news, straight from us.",
+        href: "/resources",
+      },
+      {
         label: "Blog",
         description: "News, guides and success stories.",
         href: "/resources/blog",

@@ -194,6 +194,10 @@
   grid-template-columns: minmax(0, 1024px);
 }
 
+@utility grid-cols-search {
+  grid-template-columns: minmax(0, 384px);
+}
+
 @utility text-brand-sea-1 {
   color: var(--brand-sea-1);
 }
