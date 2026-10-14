@@ -71,6 +71,7 @@
   --brand-sea-1: #2ee6d6;
   --brand-yellow-1: #ffd000;
   --brand-orange-1: #ff6a00;
+  --brand-purple-1: #8b5cf6;
   --gray-1: #f8fafc;
   --gray-2: #f3f5f7;
   --gray-3: #edf0f3;
@@ -129,6 +130,7 @@
   --color-brand-sea-1: var(--brand-sea-1);
   --color-brand-yellow-1: var(--brand-yellow-1);
   --color-brand-orange-1: var(--brand-orange-1);
+  --color-brand-purple-1: var(--brand-purple-1);
   --color-gray-1: var(--gray-1);
   --color-gray-2: var(--gray-2);
   --color-gray-3: var(--gray-3);
@@ -228,9 +230,27 @@ body {
   color: var(--primary);
 }
 
+@keyframes bubble {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@utility animate-bubble {
+  animation: bubble 8s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .scroll-reveal {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .animate-bubble {
+    animation: none !important;
   }
 }

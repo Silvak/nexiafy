@@ -53,6 +53,11 @@ export const navItems: NavItem[] = [
     label: "AI Suite",
     links: [
       {
+        label: "Overview",
+        description: "Optimized models for every deployment.",
+        href: "/ai-suite",
+      },
+      {
         label: "Automation",
         description: "AI-powered workflows for your team.",
         href: "/ai-suite/automation",
