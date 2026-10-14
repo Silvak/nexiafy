@@ -4,6 +4,8 @@ import Link from "next/link";
 import SectionContainer from "@/components/common/SectionContainer";
 import { challenges, type ChallengeItem } from "@/config/landingContent";
 
+import ScrollReveal from "./ScrollReveal";
+
 const textScrim =
   "linear-gradient(180deg, rgba(23, 27, 31, 0) 0%, rgba(23, 27, 31, 0.01) 6.67%, rgba(23, 27, 31, 0.04) 13.33%, rgba(23, 27, 31, 0.08) 20%, rgba(23, 27, 31, 0.15) 26.67%, rgba(23, 27, 31, 0.23) 33.33%, rgba(23, 27, 31, 0.33) 40%, rgba(23, 27, 31, 0.44) 46.67%, rgba(23, 27, 31, 0.56) 53.33%, rgba(23, 27, 31, 0.67) 60%, rgba(23, 27, 31, 0.77) 66.67%, rgba(23, 27, 31, 0.85) 73.33%, rgba(23, 27, 31, 0.92) 80%, rgba(23, 27, 31, 0.96) 86.67%, rgba(23, 27, 31, 0.99) 93.33%, #171b1f 100%)";
 
@@ -57,11 +59,16 @@ export default function ChallengesSection() {
         <h2 className="text-center text-xl font-bold text-gray-5 mix-blend-screen md:text-2xl lg:text-white">
           {challenges.title}
         </h2>
-        <div className="grid grid-cols-1 gap-8 overflow-hidden md:grid-cols-2">
+        <ScrollReveal
+          variant="group"
+          className="grid grid-cols-1 gap-8 overflow-hidden md:grid-cols-2"
+        >
           {challenges.items.map((item) => (
-            <ChallengeCard key={item.id} item={item} />
+            <ScrollReveal key={item.id} variant="groupItem">
+              <ChallengeCard item={item} />
+            </ScrollReveal>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </SectionContainer>
   );

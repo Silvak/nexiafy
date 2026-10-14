@@ -223,3 +223,10 @@ body {
   background-color: transparent;
   color: var(--primary);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

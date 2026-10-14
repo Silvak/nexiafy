@@ -4,10 +4,15 @@ import Button from "@/components/common/Button";
 import SectionContainer from "@/components/common/SectionContainer";
 import { foundry } from "@/config/landingContent";
 
+import ScrollReveal from "./ScrollReveal";
+
 export default function FoundrySection() {
   return (
     <SectionContainer spacing="none" className="pb-20 pt-[176px] lg:pt-44">
-      <div className="relative overflow-hidden rounded-4xl bg-gray-11">
+      <ScrollReveal
+        variant="single"
+        className="relative overflow-hidden rounded-4xl bg-gray-11"
+      >
         <div className="flex flex-col gap-6 p-5 md:flex-row md:gap-12 md:p-8">
           <div className="relative shrink-0 md:w-1/2">
             <div className="relative aspect-video w-full overflow-hidden rounded-xl md:aspect-auto md:h-full md:min-h-[400px]">
@@ -48,7 +53,7 @@ export default function FoundrySection() {
             </Button>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
     </SectionContainer>
   );
 }

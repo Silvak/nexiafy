@@ -3,7 +3,10 @@
 import { useReducedMotion } from "motion/react";
 import Marquee from "react-fast-marquee";
 
+import SectionContainer from "@/components/common/SectionContainer";
 import { investors, trustedByLogo } from "@/config/landingContent";
+
+import ScrollReveal from "./ScrollReveal";
 
 function InvestorLogo() {
   return (
@@ -18,16 +21,19 @@ function InvestorLogo() {
 }
 
 /**
- * Full-bleed investor logo marquee. Same track as the hero trusted-by strip,
- * with a short label above and the placeholder mark repeated until real
- * investor logos exist.
+ * Investor logo marquee, capped at the shared 1024px content column.
+ * Same track as the hero trusted-by strip, with a short label above and
+ * the placeholder mark repeated until real investor logos exist.
  */
 export default function InvestorsSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative mx-auto mt-[72px] flex w-full flex-col items-center">
-      <div className="relative z-10 flex w-full flex-col items-center gap-4 py-8">
+    <SectionContainer spacing="none" fullBleed className="relative mt-[72px]">
+      <ScrollReveal
+        variant="single"
+        className="relative z-10 flex w-full flex-col items-center gap-4 py-8"
+      >
         <h3 className="px-5 text-xs font-bold tracking-wide text-gray-6 uppercase lg:px-0">
           {investors.label}
         </h3>
@@ -44,7 +50,7 @@ export default function InvestorsSection() {
             <InvestorLogo />
           </Marquee>
         </div>
-      </div>
-    </section>
+      </ScrollReveal>
+    </SectionContainer>
   );
 }

@@ -8,6 +8,8 @@ import {
   type AiModelItem,
 } from "@/config/landingContent";
 
+import ScrollReveal from "./ScrollReveal";
+
 const icons: Record<AiModelIcon, LucideIcon> = {
   server: Server,
   "cloud-cog": CloudCog,
@@ -69,11 +71,16 @@ export default function AiModelsSection() {
         <h3 className="mb-6 text-center text-xl font-bold text-white lg:mb-4 lg:text-2xl">
           {aiModels.title}
         </h3>
-        <div className="relative grid w-full grid-cols-1 gap-6 overflow-hidden lg:grid-cols-2 lg:gap-4">
+        <ScrollReveal
+          variant="group"
+          className="relative grid w-full grid-cols-1 gap-6 overflow-hidden lg:grid-cols-2 lg:gap-4"
+        >
           {aiModels.items.map((item) => (
-            <ModelCard key={item.href} item={item} />
+            <ScrollReveal key={item.href} variant="groupItem">
+              <ModelCard item={item} />
+            </ScrollReveal>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </SectionContainer>
   );

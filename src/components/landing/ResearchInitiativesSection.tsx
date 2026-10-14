@@ -9,6 +9,8 @@ import {
   type ResearchInitiative,
 } from "@/config/landingContent";
 
+import ScrollReveal from "./ScrollReveal";
+
 function InitiativeCard({ item }: { item: ResearchInitiative }) {
   return (
     <div className="flex h-full w-full flex-col gap-12 rounded-3xl bg-gray-11 p-5 md:p-12">
@@ -81,6 +83,7 @@ export default function ResearchInitiativesSection() {
   const canNext = index < maxIndex;
 
   return (
+    <ScrollReveal variant="single">
     <section
       aria-label={researchInitiatives.title}
       className="flex w-full flex-col gap-5 overflow-hidden pt-16 md:gap-16 md:pt-36 lg:pt-44"
@@ -138,5 +141,6 @@ export default function ResearchInitiativesSection() {
         </div>
       </div>
     </section>
+    </ScrollReveal>
   );
 }

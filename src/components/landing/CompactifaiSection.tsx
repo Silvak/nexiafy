@@ -4,10 +4,15 @@ import Button from "@/components/common/Button";
 import SectionContainer from "@/components/common/SectionContainer";
 import { compactifai } from "@/config/landingContent";
 
+import ScrollReveal from "./ScrollReveal";
+
 export default function CompactifaiSection() {
   return (
     <SectionContainer>
-      <div className="flex flex-col items-center justify-center">
+      <ScrollReveal
+        variant="single"
+        className="flex flex-col items-center justify-center"
+      >
         <div className="flex items-center gap-2">
           <span
             aria-hidden
@@ -25,10 +30,14 @@ export default function CompactifaiSection() {
         <p className="mx-0 mt-5 text-center text-sm font-normal text-gray-6 lg:mx-28 lg:text-lg">
           {compactifai.description}
         </p>
-        <div className="mt-12 flex w-full flex-col gap-6 px-7 lg:flex-row lg:items-center lg:justify-center lg:px-0">
+        <ScrollReveal
+          variant="group"
+          className="mt-12 flex w-full flex-col gap-6 px-7 lg:flex-row lg:items-center lg:justify-center lg:px-0"
+        >
           {compactifai.metrics.map((metric) => (
-            <div
+            <ScrollReveal
               key={metric.label}
+              variant="groupItem"
               className="relative overflow-hidden rounded-[20px]"
             >
               <div
@@ -55,9 +64,9 @@ export default function CompactifaiSection() {
                   />
                 </span>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
-        </div>
+        </ScrollReveal>
         <Button
           id={compactifai.cta.id}
           href={compactifai.cta.href}
@@ -66,7 +75,7 @@ export default function CompactifaiSection() {
           {compactifai.cta.label}
           <ArrowRight aria-hidden size={20} strokeWidth={2} className="ml-3" />
         </Button>
-      </div>
+      </ScrollReveal>
     </SectionContainer>
   );
 }

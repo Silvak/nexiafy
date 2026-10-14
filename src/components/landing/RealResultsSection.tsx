@@ -6,6 +6,8 @@ import Marquee from "react-fast-marquee";
 
 import { realResults, type RealResultItem } from "@/config/landingContent";
 
+import ScrollReveal from "./ScrollReveal";
+
 function RealResultCard({ item }: { item: RealResultItem }) {
   return (
     <div className="mx-[16px] flex h-[384px] max-w-[296px] flex-col rounded-[40px] bg-gray-11 px-6 py-8 lg:h-[492px] lg:max-w-[363px] lg:p-8">
@@ -58,6 +60,7 @@ export default function RealResultsSection() {
   const reduceMotion = useReducedMotion();
 
   return (
+    <ScrollReveal variant="single">
     <section className="relative mx-auto flex w-full flex-col items-center pt-[108px] lg:pt-44">
       <h3 className="text-xl font-bold text-white lg:text-2xl">
         {realResults.title}
@@ -81,5 +84,6 @@ export default function RealResultsSection() {
         </Marquee>
       </div>
     </section>
+    </ScrollReveal>
   );
 }

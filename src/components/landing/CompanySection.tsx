@@ -8,6 +8,8 @@ import { useEffect, useRef, useState } from "react";
 import SectionContainer from "@/components/common/SectionContainer";
 import { company, type CompanyMember } from "@/config/landingContent";
 
+import ScrollReveal from "./ScrollReveal";
+
 const RING_SECONDS = 8;
 
 function initials(name: string): string {
@@ -144,7 +146,10 @@ export default function CompanySection() {
 
   return (
     <SectionContainer spacing="compact">
-      <div className="grid grid-cols-1 content-start items-start overflow-hidden rounded-[20px] bg-gray-11 md:rounded-4xl lg:grid-cols-2">
+      <ScrollReveal
+        variant="single"
+        className="grid grid-cols-1 content-start items-start overflow-hidden rounded-[20px] bg-gray-11 md:rounded-4xl lg:grid-cols-2"
+      >
         <div className="flex w-full flex-col items-start gap-12 px-5 pt-5 pb-12 md:gap-12 md:px-8 md:py-12 lg:gap-16 lg:p-12 lg:pb-14">
           <div className="flex flex-col gap-6 lg:gap-8">
             <h2 className="text-xl font-bold text-gray-5 md:text-2xl">
@@ -200,7 +205,7 @@ export default function CompanySection() {
             </AnimatePresence>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
     </SectionContainer>
   );
 }

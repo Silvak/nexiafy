@@ -4,10 +4,12 @@ import Link from "next/link";
 import SectionContainer from "@/components/common/SectionContainer";
 import { platformSpotlight } from "@/config/landingContent";
 
+import ScrollReveal from "./ScrollReveal";
+
 export default function PlatformSpotlightSection() {
   return (
     <SectionContainer spacing="compact">
-      <div className="grid grid-cols-1 gap-16">
+      <ScrollReveal variant="single" className="grid grid-cols-1 gap-16">
         <h2 className="text-center text-xl font-bold text-gray-5 md:text-2xl lg:text-gray-1">
           {platformSpotlight.title}
         </h2>
@@ -42,7 +44,7 @@ export default function PlatformSpotlightSection() {
             </Link>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
     </SectionContainer>
   );
 }

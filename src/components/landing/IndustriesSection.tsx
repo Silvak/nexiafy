@@ -21,6 +21,8 @@ import {
   type IndustryItem,
 } from "@/config/landingContent";
 
+import ScrollReveal from "./ScrollReveal";
+
 const icons: Record<IndustryIcon, LucideIcon> = {
   coins: Coins,
   lightbulb: Lightbulb,
@@ -58,11 +60,19 @@ export default function IndustriesSection() {
         <h2 className="text-center text-xl font-bold text-white md:text-2xl">
           {industries.title}
         </h2>
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
+        <ScrollReveal
+          variant="group"
+          className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4"
+        >
           {industries.items.map((item) => (
-            <IndustryCard key={item.name} item={item} />
+            <ScrollReveal key={item.name} variant="groupItem">
+              <IndustryCard item={item} />
+            </ScrollReveal>
           ))}
-          <div className="relative z-0 col-span-2 flex aspect-auto flex-col justify-between gap-5 overflow-hidden rounded-[1.25rem] p-5 pt-4 md:gap-0 md:rounded-4xl md:p-8">
+          <ScrollReveal
+            variant="groupItem"
+            className="relative z-0 col-span-2 flex aspect-auto flex-col justify-between gap-5 overflow-hidden rounded-[1.25rem] p-5 pt-4 md:gap-0 md:rounded-4xl md:p-8"
+          >
             <div
               aria-hidden
               className="absolute inset-0"
@@ -87,8 +97,8 @@ export default function IndustriesSection() {
                 strokeWidth={2}
               />
             </Link>
-          </div>
-        </div>
+          </ScrollReveal>
+        </ScrollReveal>
       </div>
     </SectionContainer>
   );

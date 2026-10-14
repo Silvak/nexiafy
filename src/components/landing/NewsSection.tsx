@@ -4,6 +4,8 @@ import Link from "next/link";
 import SectionContainer from "@/components/common/SectionContainer";
 import { news, type NewsItem } from "@/config/landingContent";
 
+import ScrollReveal from "./ScrollReveal";
+
 function NewsArticle({ item }: { item: NewsItem }) {
   return (
     <Link id={item.id} href={item.href} className="flex flex-col gap-5">
@@ -52,11 +54,16 @@ export default function NewsSection() {
           <h3 className="pt-5 text-xl font-medium text-gray-8 lg:pt-12">
             {news.subtitle}
           </h3>
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8">
+          <ScrollReveal
+            variant="group"
+            className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8"
+          >
             {news.items.map((item) => (
-              <NewsArticle key={item.id} item={item} />
+              <ScrollReveal key={item.id} variant="groupItem">
+                <NewsArticle item={item} />
+              </ScrollReveal>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </SectionContainer>
