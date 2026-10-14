@@ -8,7 +8,7 @@ export default function NexiafyLogo() {
     <Link
       href="/"
       aria-label="Home page"
-      className="flex items-center gap-2 w-[154px]"
+      className="flex items-center gap-2 w-[154px] h-[48px]"
     >
       <span
         aria-hidden="true"

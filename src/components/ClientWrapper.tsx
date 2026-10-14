@@ -7,5 +7,5 @@ interface Props {
 }
 
 export default function ClientWrapper({ children }: Props) {
-  return <div className="min-h-screen flex flex-col">{children}</div>;
+  return <div className="flex min-h-[100svh] flex-col">{children}</div>;
 }

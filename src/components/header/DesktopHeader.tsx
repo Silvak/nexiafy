@@ -17,7 +17,7 @@ export default function DesktopHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-20 hidden w-full lg:block">
       <AnnouncementBar />
-      <div className="relative px-16 py-[1rem]">
+      <div className="relative px-16 py-[1rem] h-[80px] flex items-center justify-center">
         <HeaderBackdrop visible={scrolled} />
         <div className="mx-auto grid max-w-screen-lg grid-cols-[auto_1fr_auto] items-center">
           <NexiafyLogo />
