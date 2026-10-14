@@ -3,21 +3,21 @@
 import { motion } from "motion/react";
 import { useEffect, useState, type ReactNode } from "react";
 
-const ease = [0.22, 1, 0.36, 1] as const;
+const ease = [0.22, 0.61, 0.36, 1] as const;
 
 const itemVariants = {
-  hidden: { opacity: 0, x: 28 },
+  hidden: { opacity: 0, x: 16 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.55, ease },
+    transition: { duration: 0.8, ease },
   },
 };
 
 const groupVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.08, delayChildren: 0.04 },
+    transition: { staggerChildren: 0.06, delayChildren: 0.04 },
   },
 };
 
@@ -79,10 +79,10 @@ export default function ScrollReveal({
   return (
     <motion.div
       className={revealClassName}
-      initial={{ opacity: 0, x: 28 }}
+      initial={{ opacity: 0, x: 16 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.55, ease }}
+      transition={{ duration: 0.8, ease }}
     >
       {children}
     </motion.div>

@@ -20,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`dark ${geistMono.variable} h-full overflow-x-hidden antialiased`}
+      className={`dark ${geistMono.variable} h-full overflow-x-clip antialiased`}
       style={{ colorScheme: "dark" }}
     >
       <head>
@@ -43,7 +43,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
         />
       </head>
-      <body className="min-h-full flex flex-col overflow-x-hidden font-sans">
+      <body className="min-h-full flex flex-col overflow-x-clip font-sans">
         <ClientWrapper>
           <Navbar />
           <div className="flex flex-1 flex-col pt-10 md:pt-9 lg:pt-0">
