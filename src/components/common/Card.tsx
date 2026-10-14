@@ -16,7 +16,7 @@ interface CardProps {
   [key: string]: unknown;
 }
 
-/** Rounded surface used for solutions, stats, features and news cards. */
+/** Rounded surface used for solutions and news cards. */
 export default function Card({
   children,
   padding = "md",
