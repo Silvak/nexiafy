@@ -1,6 +1,5 @@
 services:
   nexiafy:
-    container_name: nexiafy
     build:
       context: .
       dockerfile: Dockerfile
@@ -10,13 +9,22 @@ services:
       - NODE_ENV=production
       - PORT=3000
       - HOSTNAME=0.0.0.0
-      # Opcional: URLs canónicas / metadata (https://tu-dominio.com, sin barra final)
       - NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL:-}
     restart: unless-stopped
     expose:
       - "3000"
     networks:
       - dokploy-network
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=dokploy-network
+      - traefik.http.routers.nexiafy-web.rule=Host(`nexiafy.constray.com`)
+      - traefik.http.routers.nexiafy-web.entrypoints=web
+      - traefik.http.routers.nexiafy-web.middlewares=redirect-to-https@file
+      - traefik.http.routers.nexiafy-websecure.rule=Host(`nexiafy.constray.com`)
+      - traefik.http.routers.nexiafy-websecure.entrypoints=websecure
+      - traefik.http.routers.nexiafy-websecure.tls.certresolver=letsencrypt
+      - traefik.http.services.nexiafy.loadbalancer.server.port=3000
 
 networks:
   dokploy-network:
