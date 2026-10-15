@@ -1,31 +1,29 @@
 import type { Metadata } from "next";
-import type { CSSProperties } from "react";
 
-import ContactForm from "@/components/common/ContactForm";
-import { contactPageContent } from "@/config/contactFormContent";
+import ContactHero from "@/components/company/contact/ContactHero";
+import OfficeCard from "@/components/company/contact/OfficeCard";
+import PageShell from "@/components/common/PageShell";
+import ScrollReveal from "@/components/landing/ScrollReveal";
+import { officeLocations } from "@/config/officesContent";
 
 export const metadata: Metadata = {
   title: "Contact | Nexiafy",
-  description:
-    "Interested in seeing our Quantum AI softwares in action? Contact Nexiafy.",
+  description: "Reach out to Nexiafy worldwide. Find our offices and regional contact details.",
 };
 
 export default function ContactPage() {
   return (
-    <div
-      style={
-        {
-          "--mobile-banner-offset": "40px",
-          "--mobile-banner-offset-md": "36px",
-        } as CSSProperties
-      }
-      className="pt-[var(--mobile-banner-offset)] md:pt-[var(--mobile-banner-offset-md)] lg:pt-0"
-    >
-      <ContactForm
-        content={contactPageContent}
-        formId="contact-form"
-        className="grid w-full grid-cols-content justify-center gap-16 px-5 pt-16 md:px-12 md:pt-36 lg:px-16 lg:pt-44"
-      />
-    </div>
+    <PageShell>
+      <ContactHero />
+      <div className="grid grid-cols-content justify-center px-5 md:px-12 lg:px-16">
+        <div className="grid grid-cols-1 gap-5 md:gap-8 lg:gap-16">
+          {officeLocations.map((office) => (
+            <ScrollReveal key={office.id} variant="single" direction="y">
+              <OfficeCard office={office} />
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </PageShell>
   );
 }

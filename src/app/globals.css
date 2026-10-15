@@ -196,6 +196,10 @@
   grid-template-columns: minmax(0, 1024px);
 }
 
+@utility grid-cols-content-md {
+  grid-template-columns: minmax(0, 768px);
+}
+
 @utility grid-cols-search {
   grid-template-columns: minmax(0, 384px);
 }

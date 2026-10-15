@@ -113,14 +113,14 @@ export const navItems: NavItem[] = [
     label: "Company",
     links: [
       {
-        label: "About Us",
-        description: "Our mission and team.",
-        href: "/company/about",
-      },
-      {
         label: "Our Team",
         description: "Meet the people behind Nexiafy.",
         href: "/company/our-team",
+      },
+      {
+        label: "Partners",
+        description: "Grow with the Nexiafy partner program.",
+        href: "/company/partners",
       },
       {
         label: "Careers",
@@ -129,7 +129,7 @@ export const navItems: NavItem[] = [
       },
       {
         label: "Contact",
-        description: "Let's talk about your project.",
+        description: "Our offices worldwide.",
         href: "/contact",
       },
     ],
