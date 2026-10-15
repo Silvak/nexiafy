@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 import { useId, useState, type FormEvent } from "react";
 
 import ScrollReveal from "@/components/landing/ScrollReveal";
-import type { ContactFormContent } from "@/config/deploymentContent";
+import type { ContactFormContent } from "@/config/contactFormContent";
 import {
   validateContactForm,
   type ContactFormValues,
@@ -31,12 +31,20 @@ const fieldInputClass =
 const fieldWrapperClass =
   "group flex cursor-text select-none flex-col gap-2 rounded-xl border border-gray-9 bg-gray-11 px-4 py-3.5 transition-all focus-within:border-brand-sea-1/40 focus-within:bg-gray-14 focus-within:ring-4 focus-within:ring-brand-sea-1/10";
 
+const defaultSectionClassName =
+  "grid w-full grid-cols-content justify-center px-5 pt-[88px] md:px-12 lg:pt-44";
+
 interface ContactFormProps {
   content: ContactFormContent;
   formId: string;
+  className?: string;
 }
 
-export default function ContactForm({ content, formId }: ContactFormProps) {
+export default function ContactForm({
+  content,
+  formId,
+  className,
+}: ContactFormProps) {
   const countryListId = useId();
   const timezoneListId = useId();
   const [values, setValues] = useState<ContactFormValues>(emptyValues);
@@ -73,7 +81,7 @@ export default function ContactForm({ content, formId }: ContactFormProps) {
   }
 
   return (
-    <section className="grid w-full grid-cols-content justify-center px-5 pt-[88px] md:px-12 lg:pt-44">
+    <section className={className ?? defaultSectionClassName}>
       <ScrollReveal variant="single">
         <div id="contact" className="flex flex-col gap-8 md:gap-16">
           <div className="flex flex-col justify-center gap-4">

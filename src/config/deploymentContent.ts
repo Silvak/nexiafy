@@ -1,3 +1,8 @@
+import {
+  contactFormShared,
+  type ContactFormContent,
+} from "@/config/contactFormContent";
+
 export type DeploymentOptionIcon = "cloudUpload" | "databaseZap";
 
 export interface DeploymentHeroAction {
@@ -108,53 +113,13 @@ export const customModelCta = {
   href: "#contact",
 };
 
-export type ContactFormContent = typeof deploymentContact;
+export type { ContactFormContent };
 
-export const deploymentContact = {
+export const deploymentContact: ContactFormContent = {
+  ...contactFormShared,
   title: "Contact Us",
   subtitle:
     "Interested in deploying optimized models in your environment? Contact us.",
-  fields: {
-    firstName: "First Name *",
-    lastName: "Last Name *",
-    email: "Business Email *",
-    company: "Company Name *",
-    country: "Country *",
-    timezone: "Timezone *",
-    phone: "Phone number",
-    hearAbout: "How did you hear about us?",
-    hearAboutPlaceholder: "Select an option...",
-    message: "Message *",
-  },
-  hearAboutOptions: [
-    "Search engine",
-    "Social media",
-    "Referral",
-    "Event or webinar",
-    "Other",
-  ],
-  countrySuggestions: [
-    "United States",
-    "United Kingdom",
-    "Spain",
-    "Germany",
-    "France",
-    "Canada",
-    "Mexico",
-    "Brazil",
-  ],
-  timezoneSuggestions: [
-    "UTC",
-    "America/New_York",
-    "America/Los_Angeles",
-    "America/Mexico_City",
-    "Europe/Madrid",
-    "Europe/London",
-  ],
-  dataProtectionTitle: "Basic data protection information",
-  dataProtectionBody:
-    "We process the data you provide to respond to your inquiry and manage our commercial relationship. You may exercise your rights of access, rectification, erasure, and objection by contacting us. For more details, see our privacy policy.",
-  submitLabel: "Submit",
   successMessage:
     "Thank you. Your message has been recorded locally for this demo. We will follow up soon.",
 };
