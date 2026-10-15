@@ -248,13 +248,99 @@ body {
   animation: bubble 8s ease-in-out infinite;
 }
 
+@keyframes beat-inner-sm {
+  0%,
+  100% {
+    inset: 0;
+    opacity: 0;
+  }
+  50% {
+    inset: -3px;
+    opacity: 0.25;
+  }
+}
+
+@keyframes beat-outer-sm {
+  0%,
+  100% {
+    inset: -3px;
+    opacity: 0;
+  }
+  50% {
+    inset: -8px;
+    opacity: 0.12;
+  }
+}
+
+@keyframes beat-inner-lg {
+  0%,
+  100% {
+    inset: 0;
+    opacity: 0;
+  }
+  50% {
+    inset: -6px;
+    opacity: 0.25;
+  }
+}
+
+@keyframes beat-outer-lg {
+  0%,
+  100% {
+    inset: -6px;
+    opacity: 0;
+  }
+  50% {
+    inset: -16px;
+    opacity: 0.12;
+  }
+}
+
+@utility animate-beat-inner-sm {
+  animation: beat-inner-sm 3s ease-in-out infinite;
+}
+
+@utility animate-beat-outer-sm {
+  animation: beat-outer-sm 3s ease-in-out infinite;
+}
+
+@utility animate-beat-inner-lg {
+  animation: beat-inner-lg 3s ease-in-out infinite;
+}
+
+@utility animate-beat-outer-lg {
+  animation: beat-outer-lg 3s ease-in-out infinite;
+}
+
+@utility scroll-none {
+  overflow-y: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility rounded-2.5xl {
+  border-radius: 1.25rem;
+}
+
+@utility safari-radius-fix {
+  isolation: isolate;
+  transform: translateZ(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .scroll-reveal {
     opacity: 1 !important;
     transform: none !important;
   }
 
-  .animate-bubble {
+  .animate-bubble,
+  .animate-beat-inner-sm,
+  .animate-beat-outer-sm,
+  .animate-beat-inner-lg,
+  .animate-beat-outer-lg {
     animation: none !important;
   }
 }

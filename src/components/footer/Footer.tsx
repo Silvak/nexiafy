@@ -101,7 +101,7 @@ export default function Footer() {
             <div className="flex justify-center md:hidden">
               <Link
                 href={footerContact.href}
-                className="h-12 shrink-0 rounded-full border border-white/5 bg-gray-10 px-6 text-center text-sm font-medium text-gray-1 transition-all duration-300 visited:scale-100 visited:opacity-100 hover:scale-95 hover:opacity-90"
+                className="inline-flex h-12 shrink-0 items-center justify-center rounded-full border border-white/5 bg-gray-10 px-6 text-center text-sm font-medium text-gray-1 transition-all duration-300 visited:scale-100 visited:opacity-100 hover:scale-95 hover:opacity-90"
               >
                 {footerContact.label}
               </Link>

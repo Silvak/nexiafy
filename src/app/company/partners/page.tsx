@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Partners | Nexiafy",
   description:
-    "Join the Nexiafy Partner Program and deliver AI Suite and Singularity solutions with our global partner community.",
+    "Join the Nexiafy Partner Program and deliver AI Suite and Nexiafy Quantum solutions with our global partner community.",
 };
 
 export default function PartnersPage() {

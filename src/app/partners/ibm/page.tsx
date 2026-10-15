@@ -26,7 +26,7 @@ import {
 export const metadata: Metadata = {
   title: "IBM Qiskit | Nexiafy",
   description:
-    "Singularity Machine Learning — classification with IBM Quantum and Qiskit-compatible workflows.",
+    "Nexiafy Quantum ML — classification with IBM Quantum and Qiskit-compatible workflows.",
 };
 
 export default function IbmPartnerPage() {

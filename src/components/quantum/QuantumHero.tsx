@@ -55,15 +55,23 @@ export default function QuantumHero({ content }: QuantumHeroProps) {
           </div>
         ) : null}
         {content.logo ? (
-          <span
-            className={`mx-auto block w-full ${content.logo.className ?? "max-w-[160px]"}`}
-          >
-            <img
-              src={content.logo.src}
-              alt={content.logo.alt}
-              className="mx-auto w-full object-contain brightness-0 invert mix-blend-screen"
-            />
-          </span>
+          content.logo.type === "text" ? (
+            <span
+              className={`mx-auto block w-full text-center text-2xl font-bold tracking-tight text-gray-1 mix-blend-screen md:text-4xl ${content.logo.className ?? ""}`}
+            >
+              {content.logo.text}
+            </span>
+          ) : (
+            <span
+              className={`mx-auto block w-full ${content.logo.className ?? "max-w-[160px]"}`}
+            >
+              <img
+                src={content.logo.src}
+                alt={content.logo.alt}
+                className="mx-auto w-full object-contain brightness-0 invert mix-blend-screen"
+              />
+            </span>
+          )
         ) : null}
       </ScrollReveal>
     </div>

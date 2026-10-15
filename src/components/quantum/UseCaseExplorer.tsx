@@ -32,7 +32,7 @@ function findDefaultSelection(
 
 export default function UseCaseExplorer({
   title,
-  sidebarTitle = "Using Singularity in...",
+  sidebarTitle = "Using Nexiafy Quantum in...",
   industries,
   defaultIndustryId = "manufacturing",
   defaultCaseId = "anomalous-vibration",
@@ -74,9 +74,9 @@ export default function UseCaseExplorer({
       </ScrollReveal>
       <ScrollReveal variant="single" direction="y">
         <div className="relative mb-4 mt-8 aspect-auto lg:aspect-[3/2]">
-          <div className="pointer-events-none absolute inset-0 animate-beat-inner-sm rounded-[2.125rem] bg-brand-sea-1 md:animate-beat-inner-lg md:rounded-[3rem]" />
-          <div className="pointer-events-none absolute -inset-1 animate-beat-outer-sm rounded-[2.375rem] bg-brand-sea-1 md:animate-beat-outer-lg md:rounded-[4rem]" />
-          <div className="relative grid h-full w-full grid-cols-1 content-stretch items-stretch gap-4 rounded-[1.75rem] border border-brand-sea-1/70 bg-gray-14 p-3 md:rounded-4xl md:p-4 lg:grid-cols-[16rem_1fr]">
+          <div className="pointer-events-none absolute animate-beat-inner-sm rounded-[2.125rem] bg-brand-sea-1 md:animate-beat-inner-lg md:rounded-[3rem]" />
+          <div className="pointer-events-none absolute animate-beat-outer-sm rounded-[2.375rem] bg-brand-sea-1 md:animate-beat-outer-lg md:rounded-[4rem]" />
+          <div className="relative grid h-full w-full grid-cols-1 content-stretch items-stretch gap-4 lg:grid-rows-1 rounded-[1.75rem] border border-brand-sea-1/70 bg-gray-14 p-3 md:rounded-4xl md:p-4 lg:grid-cols-[16rem_1fr]">
             <div className="scroll-none relative flex min-h-full w-full flex-col rounded-2xl bg-gray-11">
               <div className="relative flex justify-between p-5">
                 <h2 className="font-bold">{sidebarTitle}</h2>

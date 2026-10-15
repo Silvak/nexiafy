@@ -8,27 +8,27 @@ import type {
   VideoSection,
 } from "./types";
 
-export const singularityHero: QuantumHeroContent = {
+export const quantumPlatformHero: QuantumHeroContent = {
   title: "Empowering Solutions",
   posterImage: "/images/image1.png",
   videoAriaLabel: "Empowering Solutions",
-  logo: { src: "/logos/singularity.svg", alt: "Singularity" },
+  logo: { type: "text", text: "Nexiafy Quantum" },
 };
 
-export const singularityIntro: IntroSplitContent = {
-  title: "Singularity",
+export const quantumPlatformIntro: IntroSplitContent = {
+  title: "Nexiafy Quantum",
   headline:
-    "Our collaborative approach with customers drives the development of Singularity, our purpose-built software platform, integrates seamlessly into industrial value chains and addresses production challenges effectively.",
+    "Our collaborative approach with customers drives the development of Nexiafy Quantum, our purpose-built software platform, integrates seamlessly into industrial value chains and addresses production challenges effectively.",
   description:
-    "Singularity features diverse high and low-level APIs for a flexible, user-friendly experience. Its core harnesses sophisticated proprietary algorithms, combining quantum and quantum-inspired computing to effectively address complex AI and optimization challenges with precision.",
+    "Nexiafy Quantum features diverse high and low-level APIs for a flexible, user-friendly experience. Its core harnesses sophisticated proprietary algorithms, combining quantum and quantum-inspired computing to effectively address complex AI and optimization challenges with precision.",
 };
 
-export const singularityUseCasesSection = {
-  title: "Witness Singularity in Action",
-  sidebarTitle: "Using Singularity in...",
+export const quantumPlatformUseCasesSection = {
+  title: "Witness Nexiafy Quantum in Action",
+  sidebarTitle: "Using Nexiafy Quantum in...",
 };
 
-export const singularityUseCaseIndustries: UseCaseIndustry[] = [
+export const quantumPlatformUseCaseIndustries: UseCaseIndustry[] = [
   {
     id: "foundations",
     label: "Foundations",
@@ -171,14 +171,13 @@ export const singularityUseCaseIndustries: UseCaseIndustry[] = [
   },
 ];
 
-export const singularityFeaturedVideo: VideoSection = {
-  embedUrl: "https://player.vimeo.com/video/879755787?badge=0&autopause=0",
+export const quantumPlatformFeaturedVideo: VideoSection = {
   posterImage: "/images/image2.png",
-  titleAttr: "Singularity platform",
+  titleAttr: "Nexiafy Quantum platform",
 };
 
-export const singularityUnlocking = {
-  title: "Unlocking the Potential of Singularity",
+export const quantumPlatformUnlocking = {
+  title: "Unlocking the Potential of Nexiafy Quantum",
   features: [
     {
       id: "production-ready",
@@ -207,10 +206,10 @@ export const singularityUnlocking = {
   ] satisfies UnlockingFeature[],
 };
 
-export const singularityChallengesSectionTitle =
-  "Addressing Critical Challenges with Singularity";
+export const quantumPlatformChallengesSectionTitle =
+  "Addressing Critical Challenges with Nexiafy Quantum";
 
-export const singularityChallenges: ChallengeBlock[] = [
+export const quantumPlatformChallenges: ChallengeBlock[] = [
   {
     id: "efficient-ai",
     bannerTitle: "Faster, Cheaper, More Efficient AI",
@@ -224,7 +223,7 @@ export const singularityChallenges: ChallengeBlock[] = [
       },
       {
         title: "Empowering Accelerated Training with Tensorized AI",
-        body: "Singularity leverages Tensor Networks to revolutionize this scenario. Our tensorized models showcase accelerated training, decreased data requirements, and reduced power consumption. Achieving accelerations exceeding 1000x, this innovation disrupts high-power applications such as machine vision and Large Language Models. It's a game-changer for technologies at the edge, rendering tensorized AI indispensable for autonomous vehicles. Notably, Nexiafy is recognized as one of the top 100 most promising AI companies globally in 2023 by CB Insights.",
+        body: "Nexiafy Quantum leverages Tensor Networks to revolutionize this scenario. Our tensorized models showcase accelerated training, decreased data requirements, and reduced power consumption. Achieving accelerations exceeding 1000x, this innovation disrupts high-power applications such as machine vision and Large Language Models. It's a game-changer for technologies at the edge, rendering tensorized AI indispensable for autonomous vehicles. Notably, Nexiafy is recognized as one of the top 100 most promising AI companies globally in 2023 by CB Insights.",
       },
     ],
   },
@@ -236,11 +235,11 @@ export const singularityChallenges: ChallengeBlock[] = [
     columns: [
       {
         title: "Unveiling Clarity: Addressing AI's Opacity Challenge",
-        body: "A pervasive challenge in the AI landscape is the opacity of many machine learning (ML) models. Often, these models function as enigmatic black boxes, lacking industrial relevance in numerous contexts. Singularity steps in to provide clarity by addressing crucial questions: What is the confidence level in our predictions? What underpins a particular decision? How does a change in circumstances impact predictions?",
+        body: "A pervasive challenge in the AI landscape is the opacity of many machine learning (ML) models. Often, these models function as enigmatic black boxes, lacking industrial relevance in numerous contexts. Nexiafy Quantum steps in to provide clarity by addressing crucial questions: What is the confidence level in our predictions? What underpins a particular decision? How does a change in circumstances impact predictions?",
       },
       {
         title: "Empowering Transparency in Mission-Critical Applications",
-        body: "The significance of these answers cannot be overstated, particularly in mission-critical applications where transparency is essential. Singularity's commitment to interpretable ML empowers industries to leverage AI with confidence.",
+        body: "The significance of these answers cannot be overstated, particularly in mission-critical applications where transparency is essential. Nexiafy Quantum's commitment to interpretable ML empowers industries to leverage AI with confidence.",
       },
     ],
   },
@@ -256,13 +255,13 @@ export const singularityChallenges: ChallengeBlock[] = [
       },
       {
         title: "Revolutionizing Optimization with Concealed Data Structures",
-        body: "Singularity takes a revolutionary approach, harnessing concealed data structures to converge quicker than prevailing algorithms. This disruptive potential has far-reaching implications, especially in time-sensitive optimization problems involving numerous variables.",
+        body: "Nexiafy Quantum takes a revolutionary approach, harnessing concealed data structures to converge quicker than prevailing algorithms. This disruptive potential has far-reaching implications, especially in time-sensitive optimization problems involving numerous variables.",
       },
     ],
   },
 ];
 
-export const singularityUnderTheHood = {
+export const quantumPlatformUnderTheHood = {
   title: "Under the hood",
   gearImage: "/images/quantum/gear-icon.svg",
   gearAlt: "Gear coming out of a box",

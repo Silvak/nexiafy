@@ -6,7 +6,9 @@ export interface QuantumHeroContent {
   posterImage: string;
   videoSrc?: string;
   videoAriaLabel?: string;
-  logo?: { src: string; alt: string; className?: string };
+  logo?:
+    | { type: "image"; src: string; alt: string; className?: string }
+    | { type: "text"; text: string; className?: string };
 }
 
 export interface IntroSplitContent {

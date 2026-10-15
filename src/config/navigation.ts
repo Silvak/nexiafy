@@ -88,13 +88,13 @@ export const navItems: NavItem[] = [
     label: "Quantum",
     links: [
       {
-        label: "Singularity",
+        label: "Nexiafy Quantum",
         description: "Quantum and quantum-inspired AI platform.",
-        href: "/quantum/singularity",
+        href: "/quantum/platform",
       },
       {
         label: "IBM Qiskit",
-        description: "Quantum Machine Learning powered by IBM.",
+        description: "Quantum Machine Learning on IBM Qiskit.",
         href: "/partners/ibm",
       },
     ],
@@ -130,7 +130,7 @@ export const navItems: NavItem[] = [
       {
         label: "Contact",
         description: "Our offices worldwide.",
-        href: "/contact",
+        href: "/contact-us",
       },
     ],
   },

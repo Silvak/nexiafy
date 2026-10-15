@@ -7,10 +7,10 @@ export const partnersHero = {
 export const partnersIntro = {
   title: "Why Partner with Nexiafy?",
   headline:
-    "Join the Nexiafy Partner Program. Leverage our AI Suite and Singularity platform to deliver optimization, inference, and deployment solutions that scale. Build with a team focused on production-ready AI and grow alongside our global partner community.",
+    "Join the Nexiafy Partner Program. Leverage our AI Suite and Nexiafy Quantum platform to deliver optimization, inference, and deployment solutions that scale. Build with a team focused on production-ready AI and grow alongside our global partner community.",
   description: `Nexiafy's model optimization stack helps teams cut infrastructure footprint by up to 90% while improving retraining cycles and inference latency for real-world workloads.
 
-Singularity brings advanced algorithms to verticals such as financial services, energy, manufacturing, and healthcare. Example use cases include portfolio optimization, risk modeling, defect detection, anomaly detection, and intelligent automation.`,
+Nexiafy Quantum brings advanced algorithms to verticals such as financial services, energy, manufacturing, and healthcare. Example use cases include portfolio optimization, risk modeling, defect detection, anomaly detection, and intelligent automation.`,
 };
 
 export interface PartnerTypeCard {
@@ -22,7 +22,7 @@ export const partnerTypeCards: PartnerTypeCard[] = [
   {
     title: "Consulting and Systems Integrators",
     description:
-      "Our consulting partners bring industry, use case, and technology expertise to help customers get the most from the Nexiafy AI Suite and Singularity. They understand customer goals and deliver the implementation support needed for full-scale projects.",
+      "Our consulting partners bring industry, use case, and technology expertise to help customers get the most from the Nexiafy AI Suite and Nexiafy Quantum. They understand customer goals and deliver the implementation support needed for full-scale projects.",
   },
   {
     title: "Referral Partners",

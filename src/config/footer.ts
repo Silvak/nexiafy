@@ -49,9 +49,9 @@ export const footerColumns: FooterColumn[] = [
         title: "Quantum",
         links: [
           {
-            id: "footer-col-0-singularity",
-            label: "Singularity",
-            href: "/quantum/singularity",
+            id: "footer-col-0-quantum-platform",
+            label: "Nexiafy Quantum",
+            href: "/quantum/platform",
           },
           {
             id: "footer-col-0-ibm",
@@ -129,7 +129,7 @@ export const footerColumns: FooterColumn[] = [
           {
             id: "footer-col-2-contact",
             label: "Contact",
-            href: "/contact",
+            href: "/contact-us",
           },
         ],
       },
