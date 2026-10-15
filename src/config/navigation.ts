@@ -58,19 +58,9 @@ export const navItems: NavItem[] = [
         href: "/ai-suite",
       },
       {
-        label: "Automation",
-        description: "AI-powered workflows for your team.",
-        href: "/ai-suite/automation",
-      },
-      {
-        label: "Predictive Analytics",
-        description: "Stay ahead of your key metrics.",
-        href: "/ai-suite/analytics",
-      },
-      {
-        label: "Custom Assistants",
-        description: "Agents trained on your own data.",
-        href: "/ai-suite/assistants",
+        label: "Inference API",
+        description: "Frontier models at a fraction of the cost.",
+        href: "/ai-suite/api",
       },
     ],
   },

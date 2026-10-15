@@ -29,19 +29,14 @@ export const footerColumns: FooterColumn[] = [
         title: "AI Suite",
         links: [
           {
-            id: "footer-col-0-automation",
-            label: "Automation",
-            href: "/ai-suite/automation",
+            id: "footer-col-0-overview",
+            label: "Overview",
+            href: "/ai-suite",
           },
           {
-            id: "footer-col-0-predictive-analytics",
-            label: "Predictive Analytics",
-            href: "/ai-suite/analytics",
-          },
-          {
-            id: "footer-col-0-custom-assistants",
-            label: "Custom Assistants",
-            href: "/ai-suite/assistants",
+            id: "footer-col-0-inference-api",
+            label: "Inference API",
+            href: "/ai-suite/api",
           },
         ],
       },
