@@ -78,6 +78,11 @@ export const navItems: NavItem[] = [
     label: "Expertise",
     links: [
       {
+        label: "Digital Natives",
+        description: "Scale AI products without limits.",
+        href: "/solutions/digital-natives",
+      },
+      {
         label: "Technical Consulting",
         description: "Assessment and technology roadmap.",
         href: "/expertise/consulting",
@@ -141,6 +146,11 @@ export const navItems: NavItem[] = [
         label: "About Us",
         description: "Our mission and team.",
         href: "/company/about",
+      },
+      {
+        label: "Our Team",
+        description: "Meet the people behind Nexiafy.",
+        href: "/company/our-team",
       },
       {
         label: "Careers",

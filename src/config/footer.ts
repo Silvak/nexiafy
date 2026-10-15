@@ -117,6 +117,11 @@ export const footerColumns: FooterColumn[] = [
             href: "/company/about",
           },
           {
+            id: "footer-col-2-our-team",
+            label: "Our Team",
+            href: "/company/our-team",
+          },
+          {
             id: "footer-col-2-careers",
             label: "Careers",
             href: "/company/careers",

@@ -445,7 +445,7 @@ export const company: CompanyContent = {
   cta: {
     id: "home-our-company-meet-team",
     label: "Meet the team",
-    href: "/company/about",
+    href: "/company/our-team",
   },
   members: [
     {
