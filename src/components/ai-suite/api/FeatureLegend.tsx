@@ -74,8 +74,8 @@ export default function FeatureLegend() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="relative flex w-full items-center justify-between overflow-hidden rounded-[10px] border border-white/5 bg-white/[0.03]">
-      <div className="no-scrollbar flex gap-4 overflow-x-scroll px-3 py-2 md:flex-wrap">
+    <div className="relative flex w-full items-center justify-between rounded-[10px] border border-white/5 bg-white/[0.03]">
+      <div className="no-scrollbar flex min-w-0 flex-1 gap-4 overflow-x-auto px-3 py-2 md:flex-wrap md:overflow-visible">
         {modelFeatureLegend.map((item, index) => (
           <div key={item.key} className="flex shrink-0 items-center gap-4">
             <LegendItem featureKey={item.key} />
@@ -87,7 +87,7 @@ export default function FeatureLegend() {
       </div>
 
       <div className="relative md:hidden">
-        <div className="absolute -bottom-1 right-12 top-0 w-12 bg-gradient-to-l from-[#181B1E] to-transparent" />
+        <div className="pointer-events-none absolute -bottom-1 right-12 top-0 w-12 rounded-r-none bg-gradient-to-l from-[#181B1E] to-transparent" />
         <button
           type="button"
           className="flex h-12 w-12 items-center justify-center border-l border-l-white/5 pr-0.5"

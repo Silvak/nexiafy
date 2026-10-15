@@ -321,6 +321,14 @@ body {
   }
 }
 
+@utility no-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @utility rounded-2.5xl {
   border-radius: 1.25rem;
 }
