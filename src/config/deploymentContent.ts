@@ -108,6 +108,8 @@ export const customModelCta = {
   href: "#contact",
 };
 
+export type ContactFormContent = typeof deploymentContact;
+
 export const deploymentContact = {
   title: "Contact Us",
   subtitle:

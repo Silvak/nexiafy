@@ -88,14 +88,14 @@ export const navItems: NavItem[] = [
     label: "Quantum",
     links: [
       {
-        label: "Quantum Computing",
-        description: "Use cases and applied research.",
-        href: "/quantum/computing",
+        label: "Singularity",
+        description: "Quantum and quantum-inspired AI platform.",
+        href: "/quantum/singularity",
       },
       {
-        label: "Advanced Simulation",
-        description: "Complex models at scale.",
-        href: "/quantum/simulation",
+        label: "IBM Qiskit",
+        description: "Quantum Machine Learning powered by IBM.",
+        href: "/partners/ibm",
       },
     ],
   },
@@ -106,21 +106,6 @@ export const navItems: NavItem[] = [
         label: "News",
         description: "All the latest news, straight from us.",
         href: "/resources",
-      },
-      {
-        label: "Blog",
-        description: "News, guides and success stories.",
-        href: "/resources/blog",
-      },
-      {
-        label: "Documentation",
-        description: "Technical guides for developers.",
-        href: "/resources/docs",
-      },
-      {
-        label: "Events",
-        description: "Webinars and conferences.",
-        href: "/resources/events",
       },
     ],
   },

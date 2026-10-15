@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 import { useId, useState, type FormEvent } from "react";
 
 import ScrollReveal from "@/components/landing/ScrollReveal";
-import { deploymentContact } from "@/config/deploymentContent";
+import type { ContactFormContent } from "@/config/deploymentContent";
 import {
   validateContactForm,
   type ContactFormValues,
@@ -31,7 +31,12 @@ const fieldInputClass =
 const fieldWrapperClass =
   "group flex cursor-text select-none flex-col gap-2 rounded-xl border border-gray-9 bg-gray-11 px-4 py-3.5 transition-all focus-within:border-brand-sea-1/40 focus-within:bg-gray-14 focus-within:ring-4 focus-within:ring-brand-sea-1/10";
 
-export default function DeploymentContactForm() {
+interface ContactFormProps {
+  content: ContactFormContent;
+  formId: string;
+}
+
+export default function ContactForm({ content, formId }: ContactFormProps) {
   const countryListId = useId();
   const timezoneListId = useId();
   const [values, setValues] = useState<ContactFormValues>(emptyValues);
@@ -73,10 +78,10 @@ export default function DeploymentContactForm() {
         <div id="contact" className="flex flex-col gap-8 md:gap-16">
           <div className="flex flex-col justify-center gap-4">
             <h2 className="text-center text-xl font-bold text-gray-1 md:text-2xl">
-              {deploymentContact.title}
+              {content.title}
             </h2>
             <p className="text-center text-lg font-medium text-gray-6">
-              {deploymentContact.subtitle}
+              {content.subtitle}
             </p>
           </div>
 
@@ -85,12 +90,12 @@ export default function DeploymentContactForm() {
               className="rounded-xl border border-brand-sea-1/30 bg-brand-sea-1/10 px-4 py-3 text-center text-sm text-gray-3"
               role="status"
             >
-              {deploymentContact.successMessage}
+              {content.successMessage}
             </p>
           ) : null}
 
           <form
-            id="deployment-contact-form"
+            id={formId}
             className="grid grid-cols-2 items-start gap-4"
             onSubmit={handleSubmit}
             noValidate
@@ -104,11 +109,11 @@ export default function DeploymentContactForm() {
                 onChange={(e) => updateField("firstName", e.target.value)}
                 aria-invalid={Boolean(errors.firstName)}
               />
-              <div className={fieldLabelClass}>
-                {deploymentContact.fields.firstName}
-              </div>
+              <div className={fieldLabelClass}>{content.fields.firstName}</div>
               {errors.firstName ? (
-                <span className="text-xs text-brand-rose-1">{errors.firstName}</span>
+                <span className="text-xs text-brand-rose-1">
+                  {errors.firstName}
+                </span>
               ) : null}
             </label>
 
@@ -121,11 +126,11 @@ export default function DeploymentContactForm() {
                 onChange={(e) => updateField("lastName", e.target.value)}
                 aria-invalid={Boolean(errors.lastName)}
               />
-              <div className={fieldLabelClass}>
-                {deploymentContact.fields.lastName}
-              </div>
+              <div className={fieldLabelClass}>{content.fields.lastName}</div>
               {errors.lastName ? (
-                <span className="text-xs text-brand-rose-1">{errors.lastName}</span>
+                <span className="text-xs text-brand-rose-1">
+                  {errors.lastName}
+                </span>
               ) : null}
             </label>
 
@@ -138,9 +143,7 @@ export default function DeploymentContactForm() {
                 onChange={(e) => updateField("email", e.target.value)}
                 aria-invalid={Boolean(errors.email)}
               />
-              <div className={fieldLabelClass}>
-                {deploymentContact.fields.email}
-              </div>
+              <div className={fieldLabelClass}>{content.fields.email}</div>
               {errors.email ? (
                 <span className="text-xs text-brand-rose-1">{errors.email}</span>
               ) : null}
@@ -155,17 +158,15 @@ export default function DeploymentContactForm() {
                 onChange={(e) => updateField("company", e.target.value)}
                 aria-invalid={Boolean(errors.company)}
               />
-              <div className={fieldLabelClass}>
-                {deploymentContact.fields.company}
-              </div>
+              <div className={fieldLabelClass}>{content.fields.company}</div>
               {errors.company ? (
-                <span className="text-xs text-brand-rose-1">{errors.company}</span>
+                <span className="text-xs text-brand-rose-1">
+                  {errors.company}
+                </span>
               ) : null}
             </label>
 
-            <label
-              className={`${fieldWrapperClass} col-span-2 md:col-span-1`}
-            >
+            <label className={`${fieldWrapperClass} col-span-2 md:col-span-1`}>
               <input
                 type="text"
                 list={countryListId}
@@ -176,21 +177,19 @@ export default function DeploymentContactForm() {
                 aria-invalid={Boolean(errors.country)}
               />
               <datalist id={countryListId}>
-                {deploymentContact.countrySuggestions.map((country) => (
+                {content.countrySuggestions.map((country) => (
                   <option key={country} value={country} />
                 ))}
               </datalist>
-              <span className={fieldLabelClass}>
-                {deploymentContact.fields.country}
-              </span>
+              <span className={fieldLabelClass}>{content.fields.country}</span>
               {errors.country ? (
-                <span className="text-xs text-brand-rose-1">{errors.country}</span>
+                <span className="text-xs text-brand-rose-1">
+                  {errors.country}
+                </span>
               ) : null}
             </label>
 
-            <label
-              className={`${fieldWrapperClass} col-span-2 md:col-span-1`}
-            >
+            <label className={`${fieldWrapperClass} col-span-2 md:col-span-1`}>
               <input
                 type="text"
                 list={timezoneListId}
@@ -201,15 +200,15 @@ export default function DeploymentContactForm() {
                 aria-invalid={Boolean(errors.timezone)}
               />
               <datalist id={timezoneListId}>
-                {deploymentContact.timezoneSuggestions.map((tz) => (
+                {content.timezoneSuggestions.map((tz) => (
                   <option key={tz} value={tz} />
                 ))}
               </datalist>
-              <span className={fieldLabelClass}>
-                {deploymentContact.fields.timezone}
-              </span>
+              <span className={fieldLabelClass}>{content.fields.timezone}</span>
               {errors.timezone ? (
-                <span className="text-xs text-brand-rose-1">{errors.timezone}</span>
+                <span className="text-xs text-brand-rose-1">
+                  {errors.timezone}
+                </span>
               ) : null}
             </label>
 
@@ -221,15 +220,13 @@ export default function DeploymentContactForm() {
                 value={values.phone}
                 onChange={(e) => updateField("phone", e.target.value)}
               />
-              <div className={fieldLabelClass}>
-                {deploymentContact.fields.phone}
-              </div>
+              <div className={fieldLabelClass}>{content.fields.phone}</div>
             </label>
 
             <div className="relative col-span-2">
               <label className="relative flex w-full select-none flex-col gap-2.5 rounded-xl border border-gray-9 bg-gray-11 px-4 py-3.5 pr-12 text-left transition-all focus-within:border-brand-sea-1/40 focus-within:bg-gray-14 focus-within:ring-4 focus-within:ring-brand-sea-1/10">
                 <span className="text-sm text-gray-7">
-                  {deploymentContact.fields.hearAbout}
+                  {content.fields.hearAbout}
                 </span>
                 <select
                   className="w-full appearance-none bg-transparent text-base text-gray-1 focus:outline-none"
@@ -237,9 +234,9 @@ export default function DeploymentContactForm() {
                   onChange={(e) => updateField("hearAbout", e.target.value)}
                 >
                   <option value="">
-                    {deploymentContact.fields.hearAboutPlaceholder}
+                    {content.fields.hearAboutPlaceholder}
                   </option>
-                  {deploymentContact.hearAboutOptions.map((option) => (
+                  {content.hearAboutOptions.map((option) => (
                     <option key={option} value={option}>
                       {option}
                     </option>
@@ -261,17 +258,17 @@ export default function DeploymentContactForm() {
                 onChange={(e) => updateField("message", e.target.value)}
                 aria-invalid={Boolean(errors.message)}
               />
-              <div className={fieldLabelClass}>
-                {deploymentContact.fields.message}
-              </div>
+              <div className={fieldLabelClass}>{content.fields.message}</div>
               {errors.message ? (
-                <span className="text-xs text-brand-rose-1">{errors.message}</span>
+                <span className="text-xs text-brand-rose-1">
+                  {errors.message}
+                </span>
               ) : null}
             </label>
 
             <details className="col-span-2 rounded-xl border border-gray-9 bg-gray-11 p-8">
               <summary className="flex cursor-pointer list-none items-center justify-between text-xl font-medium [&::-webkit-details-marker]:hidden">
-                <span>{deploymentContact.dataProtectionTitle}</span>
+                <span>{content.dataProtectionTitle}</span>
                 <ChevronDown
                   aria-hidden
                   className="h-6 w-6 shrink-0 text-gray-7 transition duration-200 [[open]_&]:rotate-180"
@@ -279,7 +276,7 @@ export default function DeploymentContactForm() {
                 />
               </summary>
               <p className="mt-4 text-sm leading-relaxed text-gray-6">
-                {deploymentContact.dataProtectionBody}
+                {content.dataProtectionBody}
               </p>
             </details>
 
@@ -288,7 +285,7 @@ export default function DeploymentContactForm() {
                 type="submit"
                 className="relative inline-flex h-12 w-40 shrink-0 items-center justify-center rounded-full bg-brand-rose-1 px-6 text-sm font-medium text-white backdrop-blur-xs disabled:pointer-events-none disabled:opacity-50"
               >
-                {deploymentContact.submitLabel}
+                {content.submitLabel}
               </button>
             </div>
           </form>

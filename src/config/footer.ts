@@ -49,14 +49,14 @@ export const footerColumns: FooterColumn[] = [
         title: "Quantum",
         links: [
           {
-            id: "footer-col-0-quantum-computing",
-            label: "Quantum Computing",
-            href: "/quantum/computing",
+            id: "footer-col-0-singularity",
+            label: "Singularity",
+            href: "/quantum/singularity",
           },
           {
-            id: "footer-col-0-advanced-simulation",
-            label: "Advanced Simulation",
-            href: "/quantum/simulation",
+            id: "footer-col-0-ibm",
+            label: "IBM Qiskit",
+            href: "/partners/ibm",
           },
         ],
       },

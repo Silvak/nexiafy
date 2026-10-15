@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 
 import CompressedModelsSection from "@/components/ai-suite/deployment/CompressedModelsSection";
-import DeploymentContactForm from "@/components/ai-suite/deployment/DeploymentContactForm";
+import ContactForm from "@/components/common/ContactForm";
+import { deploymentContact } from "@/config/deploymentContent";
 import DeploymentHero from "@/components/ai-suite/deployment/DeploymentHero";
 import DeploymentOptionsGrid from "@/components/ai-suite/deployment/DeploymentOptionsGrid";
 
@@ -17,7 +18,10 @@ export default function DeploymentPage() {
       <DeploymentHero />
       <DeploymentOptionsGrid />
       <CompressedModelsSection />
-      <DeploymentContactForm />
+      <ContactForm
+        content={deploymentContact}
+        formId="deployment-contact-form"
+      />
     </div>
   );
 }
