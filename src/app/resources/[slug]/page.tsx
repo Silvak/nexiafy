@@ -11,7 +11,6 @@ import {
   getResourceBySlug,
   getResourceSlugs,
 } from "@/lib/resources";
-import { getResourceShareUrl } from "@/lib/siteUrl";
 
 export async function generateStaticParams() {
   return getResourceSlugs().map((slug) => ({ slug }));
@@ -48,10 +47,7 @@ export default async function ResourceArticlePage({
       <div className="grid grid-cols-content justify-center px-5 pt-24 md:px-12 md:pt-32 lg:px-16 lg:pt-40">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4 md:mb-10">
           <BackButton />
-          <ShareLinks
-            title={resource.title}
-            pageUrl={getResourceShareUrl(resource.slug)}
-          />
+          <ShareLinks title={resource.title} />
         </div>
 
         <ArticleHeader resource={resource} />

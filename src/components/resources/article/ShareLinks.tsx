@@ -1,18 +1,18 @@
 "use client";
 
 import { Link2 } from "lucide-react";
-import { useCallback } from "react";
+import { useCallback, useLayoutEffect, useState } from "react";
 
 interface ShareLinksProps {
   title: string;
-  pageUrl: string;
 }
 
-export default function ShareLinks({ title, pageUrl }: ShareLinksProps) {
-  const encodedUrl = encodeURIComponent(pageUrl);
-  const encodedText = encodeURIComponent(
-    `Check out this article by Nexiafy\n\n${title}`,
-  );
+export default function ShareLinks({ title }: ShareLinksProps) {
+  const [pageUrl, setPageUrl] = useState("");
+
+  useLayoutEffect(() => {
+    setPageUrl(window.location.href);
+  }, []);
 
   const handleCopy = useCallback(async () => {
     try {
@@ -21,6 +21,20 @@ export default function ShareLinks({ title, pageUrl }: ShareLinksProps) {
       /* clipboard may be unavailable */
     }
   }, [pageUrl]);
+
+  if (!pageUrl) {
+    return (
+      <div
+        className="flex w-fit items-center justify-end gap-3 text-gray-1 md:gap-4"
+        aria-hidden
+      />
+    );
+  }
+
+  const encodedUrl = encodeURIComponent(pageUrl);
+  const encodedText = encodeURIComponent(
+    `Check out this article by Nexiafy\n\n${title}`,
+  );
 
   return (
     <div className="flex w-fit items-center justify-end gap-3 text-gray-1 md:gap-4">
