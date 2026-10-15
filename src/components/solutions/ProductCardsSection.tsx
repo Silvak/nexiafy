@@ -3,9 +3,15 @@ import Link from "next/link";
 import { ArrowRight, CloudCog } from "lucide-react";
 
 import ScrollReveal from "@/components/landing/ScrollReveal";
-import { digitalNativesProducts } from "@/config/digitalNativesContent";
+import type { SolutionProduct } from "@/config/solutions/types";
 
-export default function ProductCardsSection() {
+interface ProductCardsSectionProps {
+  products: SolutionProduct[];
+}
+
+export default function ProductCardsSection({
+  products,
+}: ProductCardsSectionProps) {
   return (
     <ScrollReveal
       variant="single"
@@ -13,7 +19,7 @@ export default function ProductCardsSection() {
       className="relative mx-auto mt-[88px] flex w-full max-w-[1024px] flex-col items-center gap-12 lg:mt-[176px]"
     >
       <div className="relative grid w-full grid-cols-1 gap-6 overflow-hidden px-5 lg:grid-cols-2 lg:gap-4 lg:px-0">
-        {digitalNativesProducts.map((product) => (
+        {products.map((product) => (
           <div
             key={product.id}
             className="flex w-full flex-col justify-between rounded-4xl bg-gray-11 p-5 lg:h-[660px] lg:p-8"

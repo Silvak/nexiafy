@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
 
-import BenefitsGrid from "@/components/solutions/digital-natives/BenefitsGrid";
-import ContactCtaSection from "@/components/solutions/digital-natives/ContactCtaSection";
-import DigitalNativesHero from "@/components/solutions/digital-natives/DigitalNativesHero";
-import PainPointsSection from "@/components/solutions/digital-natives/PainPointsSection";
-import ProductCardsSection from "@/components/solutions/digital-natives/ProductCardsSection";
-import QuoteSection from "@/components/solutions/digital-natives/QuoteSection";
+import BenefitsGrid from "@/components/solutions/BenefitsGrid";
+import ContactCtaSection from "@/components/solutions/ContactCtaSection";
+import PainPointsSection from "@/components/solutions/PainPointsSection";
+import ProductCardsSection from "@/components/solutions/ProductCardsSection";
+import QuoteSection from "@/components/solutions/QuoteSection";
+import SolutionHero from "@/components/solutions/SolutionHero";
+import {
+  digitalNativesBenefits,
+  digitalNativesCta,
+  digitalNativesHero,
+  digitalNativesPainPoints,
+  digitalNativesProducts,
+  digitalNativesQuote,
+} from "@/config/solutions/digitalNatives";
 
 export const metadata: Metadata = {
   title: "Digital Natives | Nexiafy",
@@ -16,12 +24,12 @@ export const metadata: Metadata = {
 export default function DigitalNativesPage() {
   return (
     <div className="pb-0">
-      <DigitalNativesHero />
-      <BenefitsGrid />
-      <PainPointsSection />
-      <ProductCardsSection />
-      <QuoteSection />
-      <ContactCtaSection />
+      <SolutionHero content={digitalNativesHero} />
+      <BenefitsGrid benefits={digitalNativesBenefits} />
+      <PainPointsSection section={digitalNativesPainPoints} />
+      <ProductCardsSection products={digitalNativesProducts} />
+      <QuoteSection quote={digitalNativesQuote} />
+      <ContactCtaSection cta={digitalNativesCta} />
     </div>
   );
 }

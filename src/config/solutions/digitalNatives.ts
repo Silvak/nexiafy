@@ -1,55 +1,13 @@
-export type DigitalNativesBenefitIcon =
-  | "userPlus"
-  | "chartPie"
-  | "plug"
-  | "zap"
-  | "gauge"
-  | "cloudDownload";
+import type {
+  SolutionBenefit,
+  SolutionCta,
+  SolutionHeroContent,
+  SolutionPainPointsSection,
+  SolutionProduct,
+  SolutionQuote,
+} from "./types";
 
-export interface DigitalNativesBenefit {
-  id: string;
-  icon: DigitalNativesBenefitIcon;
-  colorClass: string;
-  title: string;
-  description: string;
-}
-
-export interface DigitalNativesPainPoint {
-  id: string;
-  title: string;
-  description: string;
-}
-
-export interface DigitalNativesProduct {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  imageAlt: string;
-  href: string;
-  ctaIdDesktop: string;
-  ctaIdMobile: string;
-  /** When set, shows overlay icon badge on the image (first product only). */
-  overlayIcon?: "cloudCog";
-}
-
-export interface DigitalNativesQuote {
-  beforeHighlight: string;
-  highlight: string;
-  afterHighlight: string;
-  ctaLabel: string;
-  href: string;
-  ctaId: string;
-}
-
-export interface DigitalNativesCta {
-  title: string;
-  description: string;
-  buttonLabel: string;
-  href: string;
-}
-
-export const digitalNativesHero = {
+export const digitalNativesHero: SolutionHeroContent = {
   eyebrow: "for AI natives",
   title: "Scale Without Limits",
   description:
@@ -57,7 +15,7 @@ export const digitalNativesHero = {
   backgroundImage: "/images/image1.png",
 };
 
-export const digitalNativesBenefits: DigitalNativesBenefit[] = [
+export const digitalNativesBenefits: SolutionBenefit[] = [
   {
     id: "more-users",
     icon: "userPlus",
@@ -108,7 +66,7 @@ export const digitalNativesBenefits: DigitalNativesBenefit[] = [
   },
 ];
 
-export const digitalNativesPainPoints = {
+export const digitalNativesPainPoints: SolutionPainPointsSection = {
   title: "Pain Points We Solve",
   items: [
     {
@@ -141,10 +99,10 @@ export const digitalNativesPainPoints = {
       description:
         "Limited or delayed access to compute disrupts development and production continuity.",
     },
-  ] satisfies DigitalNativesPainPoint[],
+  ],
 };
 
-export const digitalNativesProducts: DigitalNativesProduct[] = [
+export const digitalNativesProducts: SolutionProduct[] = [
   {
     id: "ai-inference",
     title: "AI Inference",
@@ -170,7 +128,7 @@ export const digitalNativesProducts: DigitalNativesProduct[] = [
   },
 ];
 
-export const digitalNativesQuote: DigitalNativesQuote = {
+export const digitalNativesQuote: SolutionQuote = {
   beforeHighlight:
     "“Integrating Nexiafy’s optimized models into our customer support chatbot has been a game changer. We have ",
   highlight: "reduced our model footprint by over 50%",
@@ -181,7 +139,7 @@ export const digitalNativesQuote: DigitalNativesQuote = {
   ctaId: "solutions-digital-natives-quote-cta",
 };
 
-export const digitalNativesCta: DigitalNativesCta = {
+export const digitalNativesCta: SolutionCta = {
   title: "Ready to transform your AI capabilities?",
   description:
     "Contact us today to learn how Nexiafy can streamline your AI operations and drive your business forward.",

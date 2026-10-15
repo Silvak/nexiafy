@@ -2,37 +2,53 @@
 
 import type { LucideIcon } from "lucide-react";
 import {
+  Blocks,
   ChartPie,
   CircleGauge,
   CloudDownload,
+  Cpu,
+  Earth,
+  LockKeyhole,
   Plug2,
+  ServerCrash,
+  Unplug,
   UserPlus,
   Zap,
 } from "lucide-react";
 
 import ScrollReveal from "@/components/landing/ScrollReveal";
-import {
-  digitalNativesBenefits,
-  type DigitalNativesBenefitIcon,
-} from "@/config/digitalNativesContent";
+import type {
+  SolutionBenefit,
+  SolutionBenefitIcon,
+} from "@/config/solutions/types";
 
-const benefitIcons: Record<DigitalNativesBenefitIcon, LucideIcon> = {
+const benefitIcons: Record<SolutionBenefitIcon, LucideIcon> = {
   userPlus: UserPlus,
   chartPie: ChartPie,
   plug: Plug2,
   zap: Zap,
   gauge: CircleGauge,
   cloudDownload: CloudDownload,
+  cpu: Cpu,
+  unplug: Unplug,
+  earth: Earth,
+  serverCrash: ServerCrash,
+  lockKeyhole: LockKeyhole,
+  blocks: Blocks,
 };
 
-export default function BenefitsGrid() {
+interface BenefitsGridProps {
+  benefits: SolutionBenefit[];
+}
+
+export default function BenefitsGrid({ benefits }: BenefitsGridProps) {
   return (
     <section className="flex w-full flex-col items-center justify-center px-5 pb-0 pt-16 md:px-12 md:pt-[88px]">
       <ScrollReveal
         variant="group"
         className="mx-auto grid w-full max-w-[1024px] gap-8 md:grid-cols-2 lg:grid-cols-3"
       >
-        {digitalNativesBenefits.map((benefit) => {
+        {benefits.map((benefit) => {
           const Icon = benefitIcons[benefit.icon];
           return (
             <ScrollReveal

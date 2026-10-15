@@ -78,19 +78,9 @@ export const navItems: NavItem[] = [
         href: "/solutions/digital-natives",
       },
       {
-        label: "Technical Consulting",
-        description: "Assessment and technology roadmap.",
-        href: "/expertise/consulting",
-      },
-      {
-        label: "Custom Development",
-        description: "End-to-end digital products.",
-        href: "/expertise/development",
-      },
-      {
-        label: "Dedicated Teams",
-        description: "Scale your team with specialists.",
-        href: "/expertise/teams",
+        label: "Corporates",
+        description: "Extend your infrastructure.",
+        href: "/solutions/corporates",
       },
     ],
   },

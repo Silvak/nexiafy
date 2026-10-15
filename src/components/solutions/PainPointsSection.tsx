@@ -1,9 +1,13 @@
 import { Check } from "lucide-react";
 
 import ScrollReveal from "@/components/landing/ScrollReveal";
-import { digitalNativesPainPoints } from "@/config/digitalNativesContent";
+import type { SolutionPainPointsSection } from "@/config/solutions/types";
 
-export default function PainPointsSection() {
+interface PainPointsSectionProps {
+  section: SolutionPainPointsSection;
+}
+
+export default function PainPointsSection({ section }: PainPointsSectionProps) {
   return (
     <section className="grid grid-cols-content justify-center gap-16 px-5 pt-16 md:pt-36 lg:px-0 lg:pt-44">
       <ScrollReveal
@@ -11,14 +15,14 @@ export default function PainPointsSection() {
         direction="y"
         className="text-center text-lg font-medium text-gray-5 md:text-xl"
       >
-        {digitalNativesPainPoints.title}
+        {section.title}
       </ScrollReveal>
       <ScrollReveal
         variant="single"
         direction="y"
         className="flex flex-col gap-5 rounded-4xl bg-gray-11 p-5 md:gap-8 md:p-8"
       >
-        {digitalNativesPainPoints.items.map((item) => (
+        {section.items.map((item) => (
           <div
             key={item.id}
             className="grid grid-cols-1 items-start gap-5 md:grid-cols-[auto_1fr_1fr] md:gap-0"
