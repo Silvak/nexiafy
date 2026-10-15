@@ -62,6 +62,11 @@ export const navItems: NavItem[] = [
         description: "Frontier models at a fraction of the cost.",
         href: "/ai-suite/api",
       },
+      {
+        label: "Private Deployment",
+        description: "Run optimized models in your cloud or on-prem.",
+        href: "/ai-suite/deployment",
+      },
     ],
   },
   {

@@ -38,6 +38,11 @@ export const footerColumns: FooterColumn[] = [
             label: "Inference API",
             href: "/ai-suite/api",
           },
+          {
+            id: "footer-col-0-private-deployment",
+            label: "Private Deployment",
+            href: "/ai-suite/deployment",
+          },
         ],
       },
       {

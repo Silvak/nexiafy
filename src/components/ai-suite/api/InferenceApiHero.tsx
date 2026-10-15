@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowDown, ChevronLeft, Gift } from "lucide-react";
 
 import { inferenceApiHero } from "@/config/inferenceApiContent";
+import { heroActionClass } from "@/lib/heroActionClass";
 
 export default function InferenceApiHero() {
   const backgroundImage = `linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(rgba(0, 0, 0, 0.137) 0%, rgba(0, 0, 0, 0.8) 100%), url("${inferenceApiHero.backgroundImage}")`;
@@ -50,17 +51,11 @@ export default function InferenceApiHero() {
         </div>
 
         <div className="flex w-full max-w-[212px] flex-col items-start justify-center gap-3 md:w-fit md:max-w-none md:flex-row">
-          {inferenceApiHero.actions.map((action) => {
-            const isPrimary = action.variant === "primary";
-            const className = isPrimary
-              ? "flex h-14 flex-row items-center w-full md:w-fit justify-center gap-3 rounded-full px-6 text-center text-[14px] font-bold leading-[20px] text-white transition-all duration-300 hover:scale-95 hover:opacity-90 bg-brand-rose-1"
-              : "flex h-14 flex-row items-center w-full md:w-fit justify-center gap-3 rounded-full px-6 text-center text-[14px] font-bold leading-[20px] text-white transition-all duration-300 hover:scale-95 hover:opacity-90 border border-white/5 bg-gray-9";
-
-            return (
+          {inferenceApiHero.actions.map((action) => (
               <Link
                 key={action.id}
                 href={action.href}
-                className={className}
+                className={heroActionClass(action.variant)}
                 id={action.id}
               >
                 <span>{action.label}</span>
@@ -68,8 +63,7 @@ export default function InferenceApiHero() {
                   <ArrowDown aria-hidden size={20} strokeWidth={2} />
                 ) : null}
               </Link>
-            );
-          })}
+          ))}
         </div>
 
         <div className="inline-flex items-center gap-2 rounded-full border border-gray-1/[0.06] bg-[#2A1014] py-1.5 pl-3 pr-3.5">

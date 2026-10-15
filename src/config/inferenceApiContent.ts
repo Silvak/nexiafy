@@ -232,5 +232,5 @@ export const privateEndpointCta = {
   contactLabel: "Contact Us",
   contactHref: "/contact",
   deploymentLabel: "About Private Deployment",
-  deploymentHref: "/ai-suite",
+  deploymentHref: "/ai-suite/deployment",
 };

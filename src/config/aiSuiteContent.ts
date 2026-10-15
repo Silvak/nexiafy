@@ -82,7 +82,7 @@ export const aiSuiteDeployment = {
       image: "/images/card-infra.png",
       imageAlt: "Private deployment infrastructure",
       ctaLabel: "Discover",
-      href: "/contact",
+      href: "/ai-suite/deployment",
     },
   ] satisfies AiSuiteDeploymentOption[],
 };
