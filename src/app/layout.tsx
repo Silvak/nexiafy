@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientWrapper from "@/components/ClientWrapper";
+import BackToTopButton from "@/components/common/BackToTopButton";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             {children}
           </div>
           <Footer />
+          <BackToTopButton />
         </ClientWrapper>
       </body>
     </html>
